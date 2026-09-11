@@ -44,22 +44,7 @@ header {
 
     border-bottom: 1px solid #e2eee7;
 
-}
 
-
-/* LOGO */
-
-.logo {
-
-    color: #176b48;
-
-    font-size: 21px;
-
-    font-weight: bold;
-
-    white-space: nowrap;
-
-}
 
 
 /* MENU */
@@ -77,7 +62,21 @@ nav {
     flex-wrap: wrap;
 
 }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #176b48;
+    font-size: 21px;
+    font-weight: bold;
+    white-space: nowrap;
+}
 
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
 
 nav a {
 

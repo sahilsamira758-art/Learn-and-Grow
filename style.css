@@ -1,0 +1,1848 @@
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f7fbf8;
+
+    color: #19352b;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+
+    width: 100%;
+
+    min-height: 75px;
+
+    padding: 15px 6%;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e2eee7;
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+    color: #176b48;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+}
+
+
+/* MENU */
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 5px;
+
+    flex-wrap: wrap;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: #466057;
+
+    font-size: 13px;
+
+    padding: 8px 9px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+
+}
+
+
+nav a:hover {
+
+    background: #e6f5ec;
+
+    color: #176b48;
+
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+
+    min-height: 600px;
+
+    padding: 80px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.6fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #effaf3,
+            #ffffff
+        );
+
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.hero-text {
+
+    max-width: 700px;
+
+}
+
+
+/* SMALL TITLE */
+
+.small-title {
+
+    color: #18804f;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* MAIN TITLE */
+
+.hero h1 {
+
+    font-size: 62px;
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    color: #17251f;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: #1b8756;
+
+}
+
+
+/* DESCRIPTION */
+
+.description {
+
+    color: #607169;
+
+    font-size: 18px;
+
+    max-width: 650px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn {
+
+    display: inline-block;
+
+    padding: 13px 21px;
+
+    border-radius: 10px;
+
+    background: #176b48;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.btn:hover {
+
+    background: #0e5437;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* SECOND BUTTON */
+
+.btn.second {
+
+    background: white;
+
+    color: #176b48;
+
+    border: 1px solid #b9d8c6;
+
+}
+
+
+.btn.second:hover {
+
+    background: #effaf3;
+
+}
+
+
+/* =========================
+   RIGHT CARD
+========================= */
+
+.hero-card {
+
+    background: white;
+
+    padding: 38px 32px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    border: 1px solid #e1ece5;
+
+    box-shadow:
+
+        0 20px 50px
+        rgba(20, 70, 45, 0.12);
+
+}
+
+
+/* PLANT */
+
+.plant {
+
+    font-size: 75px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* CARD TITLE */
+
+.hero-card h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+
+    color: #19352b;
+
+}
+
+
+/* CARD TEXT */
+
+.hero-card p {
+
+    color: #64736c;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress {
+
+    width: 100%;
+
+    height: 12px;
+
+    margin: 22px 0 10px;
+
+    background: #e5eee9;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+/* GREEN PART */
+
+.progress-fill {
+
+    width: 65%;
+
+    height: 100%;
+
+    background: #36a76f;
+
+    border-radius: 20px;
+
+}
+
+
+/* PROGRESS TEXT */
+
+.progress-text {
+
+    font-size: 13px !important;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #173d2d;
+
+    color: #dcebe2;
+
+    padding: 25px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    nav {
+
+        justify-content: center;
+
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding: 65px 7%;
+
+    }
+
+
+    .hero-text {
+
+        max-width: 800px;
+
+    }
+
+
+    .hero-card {
+
+        max-width: 500px;
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+
+    header {
+
+        padding: 18px 5%;
+
+    }
+
+
+    nav a {
+
+        font-size: 12px;
+
+        padding: 6px;
+
+    }
+
+
+    .hero {
+
+        padding: 55px 5%;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .description {
+
+        font-size: 16px;
+
+    }
+
+
+    .hero-card {
+
+        padding: 30px 22px;
+
+    }
+
+
+    footer {
+
+        display: block;
+
+    }
+
+
+    footer p + p {
+
+        margin-top: 8px;
+
+    }
+
+}
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills {
+
+    padding: 75px 8%;
+
+    background: #f7fbf8;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-title p:last-child {
+
+    color: #65756e;
+
+}
+
+
+/* =========================
+   SKILL CARDS
+========================= */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.card {
+
+    background: white;
+
+    border: 1px solid #e1ece5;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    text-decoration: none;
+
+    color: #19352b;
+
+    transition: 0.3s;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(23, 61, 42, 0.1);
+
+}
+
+
+.icon {
+
+    font-size: 35px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.card h3 {
+
+    margin-bottom: 8px;
+
+    font-size: 21px;
+
+}
+
+
+.card p {
+
+    color: #64736c;
+
+    font-size: 14px;
+
+    margin-bottom: 16px;
+
+}
+
+
+.card strong {
+
+    color: #18734b;
+
+}
+
+
+/* =========================
+   SKILLS TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================
+   SKILLS PHONE
+========================= */
+
+@media (max-width: 650px) {
+
+    .skills {
+
+        padding: 50px 5%;
+
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size: 30px;
+
+    }
+
+}
+/* =========================
+   PURPOSE SECTION
+========================= */
+
+.purpose {
+
+    background: #eaf7ef;
+
+    padding: 65px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.purpose h2 {
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+
+}
+
+
+.purpose-text > p:last-child {
+
+    color: #52665b;
+
+    max-width: 600px;
+
+}
+
+
+/* =========================
+   STAT BOXES
+========================= */
+
+.stats {
+
+    display: flex;
+
+    gap: 18px;
+
+}
+
+
+.stat-box {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    min-width: 100px;
+
+}
+
+
+.stat-box strong {
+
+    display: block;
+
+    color: #176b48;
+
+    font-size: 28px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #173d2d;
+
+    color: #dcebe2;
+
+    padding: 30px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   PURPOSE MOBILE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .purpose {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .purpose {
+
+        padding: 50px 5%;
+
+    }
+
+
+    .purpose h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .stats {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    footer {
+
+        display: block;
+
+    }
+
+
+    footer p + p {
+
+        margin-top: 8px;
+
+    }
+
+}
+/* =========================================================
+   CHALLENGES SECTION
+========================================================= */
+
+.study-section {
+
+    padding: 75px 8%;
+
+    background: #f7fbf8;
+
+}
+
+
+/* CHALLENGE INTRO */
+
+.study-section .section-title {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.study-section .section-title h2 {
+
+    font-size: 38px;
+
+    color: #19352b;
+
+    margin-bottom: 10px;
+
+}
+
+
+.study-section .section-title p {
+
+    color: #65756e;
+
+}
+
+
+/* CHALLENGE CARDS */
+
+.study-section .cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.study-section .card {
+
+    background: white;
+
+    border: 1px solid #e1ece5;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    color: #19352b;
+
+    transition: 0.3s;
+
+}
+
+
+.study-section .card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(23, 61, 42, 0.12);
+
+}
+
+
+.study-section .card h3 {
+
+    color: #19352b;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.study-section .card p {
+
+    color: #64736c;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* CHALLENGE BUTTON */
+
+.practice-btn {
+
+    width: 100%;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #176b48;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.practice-btn:hover {
+
+    background: #0e5437;
+
+    transform: translateY(-2px);
+
+}
+
+
+.practice-btn:disabled {
+
+    background: #6aaa8b;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   INTERACTIVE CHALLENGE PANEL
+========================================================= */
+
+#challengePanel {
+
+    display: none;
+
+    margin: 45px auto 0;
+
+    max-width: 800px;
+
+    padding: 35px;
+
+    background: white;
+
+    border: 1px solid #dceae2;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(23, 61, 42, 0.10);
+
+}
+
+
+#challengePanel.active {
+
+    display: block;
+
+}
+
+
+#challengeTitle {
+
+    color: #176b48;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+#challengeDescription {
+
+    color: #64736c;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* CHALLENGE TASKS */
+
+#challengeTasks {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.challenge-task {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    background: #f3faf6;
+
+    border: 1px solid #dcece3;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    color: #19352b;
+
+    transition: 0.3s;
+
+}
+
+
+.challenge-task:hover {
+
+    background: #eaf7ef;
+
+}
+
+
+.challenge-task input {
+
+    width: 18px;
+
+    height: 18px;
+
+    margin-top: 3px;
+
+    accent-color: #176b48;
+
+    cursor: pointer;
+
+}
+
+
+.challenge-task span {
+
+    flex: 1;
+
+    font-size: 15px;
+
+}
+
+
+/* COMPLETION MESSAGE */
+
+#challengeMessage {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #eaf7ef;
+
+    color: #176b48;
+
+    font-weight: bold;
+
+}
+
+
+/* PANEL BUTTONS */
+
+#challengePanel button {
+
+    margin-top: 20px;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #176b48;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+#challengePanel button:hover {
+
+    background: #0e5437;
+
+}
+
+
+/* =========================================================
+   CHALLENGES TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .study-section .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   CHALLENGES MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .study-section {
+
+        padding: 50px 5%;
+
+    }
+
+
+    .study-section .section-title h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .study-section .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #challengePanel {
+
+        padding: 25px 20px;
+
+    }
+
+
+    #challengeTitle {
+
+        font-size: 25px;
+
+    }
+
+
+    .challenge-task {
+
+        padding: 13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+
+    background: #101814;
+
+    color: #e5f2eb;
+
+}
+
+
+/* NAVIGATION */
+
+body.dark-mode header {
+
+    background: #16231d;
+
+    border-bottom-color: #294238;
+
+}
+
+
+body.dark-mode nav a {
+
+    color: #b8cec2;
+
+}
+
+
+body.dark-mode nav a:hover {
+
+    background: #20382d;
+
+    color: #7ed6a8;
+
+}
+
+
+/* CHALLENGES */
+
+body.dark-mode .study-section {
+
+    background: #101814;
+
+}
+
+
+body.dark-mode .study-section .section-title h2 {
+
+    color: #e5f2eb;
+
+}
+
+
+body.dark-mode .study-section .section-title p {
+
+    color: #a9bdb2;
+
+}
+
+
+body.dark-mode .study-section .card {
+
+    background: #18251f;
+
+    border-color: #2b4438;
+
+    color: #e5f2eb;
+
+}
+
+
+body.dark-mode .study-section .card h3 {
+
+    color: #e5f2eb;
+
+}
+
+
+body.dark-mode .study-section .card p {
+
+    color: #a9bdb2;
+
+}
+
+
+/* BUTTONS */
+
+body.dark-mode .practice-btn {
+
+    background: #2f9b68;
+
+    color: white;
+
+}
+
+
+body.dark-mode .practice-btn:hover {
+
+    background: #3caf7a;
+
+}
+
+
+body.dark-mode .practice-btn:disabled {
+
+    background: #496d5a;
+
+}
+
+
+/* CHALLENGE PANEL */
+
+body.dark-mode #challengePanel {
+
+    background: #18251f;
+
+    border-color: #2b4438;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.3);
+
+}
+
+
+body.dark-mode #challengeTitle {
+
+    color: #7ed6a8;
+
+}
+
+
+body.dark-mode #challengeDescription {
+
+    color: #a9bdb2;
+
+}
+
+
+/* TASKS */
+
+body.dark-mode .challenge-task {
+
+    background: #1d3027;
+
+    border-color: #315143;
+
+    color: #e5f2eb;
+
+}
+
+
+body.dark-mode .challenge-task:hover {
+
+    background: #244034;
+
+}
+
+
+body.dark-mode #challengeMessage {
+
+    background: #20382d;
+
+    color: #8fe0b1;
+
+}
+
+
+/* PANEL BUTTON */
+
+body.dark-mode #challengePanel button {
+
+    background: #2f9b68;
+
+}
+
+
+body.dark-mode #challengePanel button:hover {
+
+    background: #3caf7a;
+
+}
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard-hero {
+
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #effaf3,
+            #ffffff
+        );
+
+    text-align: center;
+
+}
+
+
+.dashboard-hero h1 {
+
+    font-size: 48px;
+
+    color: #17251f;
+
+    margin-bottom: 15px;
+
+}
+
+
+.dashboard-hero p:last-child {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #607169;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   DASHBOARD SECTIONS
+========================================================= */
+
+.dashboard-section {
+
+    padding: 70px 8%;
+
+    background: #f7fbf8;
+
+}
+
+
+.dashboard-section:nth-of-type(even) {
+
+    background: white;
+
+}
+
+
+/* =========================================================
+   DASHBOARD STAT CARDS
+========================================================= */
+
+.dashboard-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.dashboard-stat {
+
+    background: white;
+
+    border: 1px solid #e1ece5;
+
+    border-radius: 18px;
+
+    padding: 28px 20px;
+
+    text-align: center;
+
+    transition: 0.3s;
+
+}
+
+
+.dashboard-stat:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(23, 61, 42, 0.10);
+
+}
+
+
+.dashboard-stat h3 {
+
+    color: #607169;
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.dashboard-stat strong {
+
+    display: block;
+
+    color: #176b48;
+
+    font-size: 34px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.dashboard-stat p {
+
+    color: #65756e;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   LEARNING PROGRESS
+========================================================= */
+
+.learning-progress {
+
+    max-width: 850px;
+
+    margin: auto;
+
+}
+
+
+.progress-item {
+
+    margin-bottom: 25px;
+
+}
+
+
+.progress-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+
+}
+
+
+.progress-heading h3 {
+
+    color: #19352b;
+
+    font-size: 17px;
+
+}
+
+
+.progress-heading span {
+
+    color: #176b48;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+}
+
+
+.dashboard-progress {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: #e5eee9;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.dashboard-progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #36a76f;
+
+    border-radius: 20px;
+
+    transition: width 0.5s ease;
+
+}
+
+
+/* =========================================================
+   ACTIVITY BOX
+========================================================= */
+
+.activity-box {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #e1ece5;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+}
+
+
+.activity-box p {
+
+    color: #64736c;
+
+    margin-bottom: 8px;
+
+}
+
+
+.activity-box p:first-child {
+
+    color: #176b48;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   DASHBOARD MOTIVATION
+========================================================= */
+
+.dashboard-motivation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    padding: 70px 8%;
+
+    background: #f7fbf8;
+
+}
+
+
+.contact-info {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    background: white;
+
+    border: 1px solid #e1ece5;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+}
+
+
+.contact-info p {
+
+    color: #52665b;
+
+    margin-bottom: 8px;
+
+}
+
+
+.contact-info a {
+
+    color: #176b48;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+.contact-info a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   DASHBOARD TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .dashboard-motivation {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   DASHBOARD MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .dashboard-hero {
+
+        padding: 55px 5%;
+
+    }
+
+
+    .dashboard-hero h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .dashboard-hero p:last-child {
+
+        font-size: 15px;
+
+    }
+
+
+    .dashboard-section {
+
+        padding: 50px 5%;
+
+    }
+
+
+    .dashboard-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dashboard-stat {
+
+        padding: 24px 18px;
+
+    }
+
+
+    .progress-heading h3 {
+
+        font-size: 15px;
+
+    }
+
+
+    .activity-box {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .contact {
+
+        padding: 50px 5%;
+
+    }
+
+
+    .dashboard-motivation {
+
+        padding: 50px 5%;
+
+    }
+
+}

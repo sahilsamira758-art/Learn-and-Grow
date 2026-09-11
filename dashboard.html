@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Learn & Grow</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+    <div class="logo">
+        Learn & Grow
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="study.html">
+            Study Skills
+        </a>
+
+        <a href="communication.html">
+            Communication
+        </a>
+
+        <a href="leadership.html">
+            Leadership
+        </a>
+
+        <a href="growth.html">
+            Personal Growth
+        </a>
+
+        <a href="practice.html">
+            Practice
+        </a>
+
+        <a href="challenges.html">
+            Challenges
+        </a>
+
+        <a href="achievements.html">
+            Achievements
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     DASHBOARD HERO
+========================= -->
+
+<section class="dashboard-hero">
+
+    <div>
+
+        <p class="small-title">
+            YOUR LEARNING JOURNEY
+        </p>
+
+
+        <h1>
+            Welcome to your Dashboard
+        </h1>
+
+
+        <p>
+            Track your progress, complete challenges,
+            build your skills and keep growing every day.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROGRESS OVERVIEW
+========================= -->
+
+<section class="dashboard-section">
+
+    <div class="section-title">
+
+        <p class="small-title">
+            PROGRESS OVERVIEW
+        </p>
+
+
+        <h2>
+            Your progress
+        </h2>
+
+
+        <p>
+            Keep learning and practicing to improve
+            your progress.
+        </p>
+
+    </div>
+
+
+
+    <div class="dashboard-stats">
+
+
+        <!-- XP -->
+
+        <div class="dashboard-stat">
+
+            <h3>
+                XP
+            </h3>
+
+            <strong id="dashboardXP">
+                0
+            </strong>
+
+            <p>
+                Experience Points
+            </p>
+
+        </div>
+
+
+
+        <!-- LEVEL -->
+
+        <div class="dashboard-stat">
+
+            <h3>
+                Level
+            </h3>
+
+            <strong id="dashboardLevel">
+                1
+            </strong>
+
+            <p>
+                Current Level
+            </p>
+
+        </div>
+
+
+
+        <!-- STREAK -->
+
+        <div class="dashboard-stat">
+
+            <h3>
+                Streak
+            </h3>
+
+            <strong id="dashboardStreak">
+                0
+            </strong>
+
+            <p>
+                Days
+            </p>
+
+        </div>
+
+
+
+        <!-- ACHIEVEMENTS -->
+
+        <div class="dashboard-stat">
+
+            <h3>
+                Achievements
+            </h3>
+
+            <strong id="dashboardAchievements">
+                0
+            </strong>
+
+            <p>
+                Completed
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     LEARNING PROGRESS
+========================= -->
+
+<section class="dashboard-section">
+
+    <div class="section-title">
+
+        <p class="small-title">
+            SKILL PROGRESS
+        </p>
+
+
+        <h2>
+            Your learning areas
+        </h2>
+
+
+        <p>
+            Continue practicing each skill to make progress.
+        </p>
+
+    </div>
+
+
+
+    <div class="learning-progress">
+
+
+        <!-- STUDY -->
+
+        <div class="progress-item">
+
+            <div class="progress-heading">
+
+                <h3>
+                    Study Skills
+                </h3>
+
+                <span id="studyProgressText">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-progress">
+
+                <div
+                    class="dashboard-progress-fill"
+                    id="studyProgress">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COMMUNICATION -->
+
+        <div class="progress-item">
+
+            <div class="progress-heading">
+
+                <h3>
+                    Communication
+                </h3>
+
+                <span id="communicationProgressText">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-progress">
+
+                <div
+                    class="dashboard-progress-fill"
+                    id="communicationProgress">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LEADERSHIP -->
+
+        <div class="progress-item">
+
+            <div class="progress-heading">
+
+                <h3>
+                    Leadership
+                </h3>
+
+                <span id="leadershipProgressText">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-progress">
+
+                <div
+                    class="dashboard-progress-fill"
+                    id="leadershipProgress">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PERSONAL GROWTH -->
+
+        <div class="progress-item">
+
+            <div class="progress-heading">
+
+                <h3>
+                    Personal Growth
+                </h3>
+
+                <span id="growthProgressText">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-progress">
+
+                <div
+                    class="dashboard-progress-fill"
+                    id="growthProgress">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     QUICK ACTIONS
+========================= -->
+
+<section class="dashboard-section">
+
+    <div class="section-title">
+
+        <p class="small-title">
+            QUICK ACTIONS
+        </p>
+
+
+        <h2>
+            Continue learning
+        </h2>
+
+
+        <p>
+            Choose an activity and keep building your skills.
+        </p>
+
+    </div>
+
+
+
+    <div class="cards">
+
+
+        <a href="study.html" class="card">
+
+            <div class="icon"></div>
+
+            <h3>
+                Study Skills
+            </h3>
+
+            <p>
+                Improve your study habits,
+                time management and exam preparation.
+            </p>
+
+            <strong>
+                Start Learning →
+            </strong>
+
+        </a>
+
+
+
+        <a href="practice.html" class="card">
+
+            <div class="icon"></div>
+
+            <h3>
+                Practice
+            </h3>
+
+            <p>
+                Practice what you have learned
+                through activities and quizzes.
+            </p>
+
+            <strong>
+                Start Practicing →
+            </strong>
+
+        </a>
+
+
+
+        <a href="challenges.html" class="card">
+
+            <div class="icon"></div>
+
+            <h3>
+                Challenges
+            </h3>
+
+            <p>
+                Complete challenges and
+                improve your learning progress.
+            </p>
+
+            <strong>
+                View Challenges →
+            </strong>
+
+        </a>
+
+
+
+        <a href="achievements.html" class="card">
+
+            <div class="icon"></div>
+
+            <h3>
+                Achievements
+            </h3>
+
+            <p>
+                See the achievements you have
+                earned through your learning journey.
+            </p>
+
+            <strong>
+                View Achievements →
+            </strong>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     RECENT ACTIVITY
+========================= -->
+
+<section class="dashboard-section">
+
+    <div class="section-title">
+
+        <p class="small-title">
+            RECENT ACTIVITY
+        </p>
+
+
+        <h2>
+            Your latest activity
+        </h2>
+
+    </div>
+
+
+
+    <div class="activity-box" id="dashboardActivity">
+
+        <p>
+            No activity yet.
+        </p>
+
+        <p>
+            Start a lesson, practice activity or challenge
+            to begin building your learning history.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MOTIVATION
+========================= -->
+
+<section class="purpose dashboard-motivation">
+
+    <div class="purpose-text">
+
+        <p class="small-title">
+            KEEP GROWING
+        </p>
+
+
+        <h2>
+            Every small step counts.
+        </h2>
+
+
+        <p>
+            Learn something new, practice your skills
+            and continue improving. Your progress grows
+            with every step you take.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <a href="study.html" class="btn">
+            Continue Learning →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        Learn & Grow — Learn today, grow every day.
+    </p>
+
+
+    <p>
+        Student Web Project
+    </p>
+
+
+    <p>
+        Contact:
+        <a href="mailto:learnandgrow@gmail.com">
+            learnandgrow@gmail.com
+        </a>
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

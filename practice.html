@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Practice Zone | Learn & Grow</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================
+           PRACTICE PANELS
+        ========================= */
+
+        .quiz-box {
+            display: none;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .quiz-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .quiz-progress {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .quiz-question {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 12px;
+        }
+
+        .quiz-option,
+        .communication-option {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: left;
+            transition: 0.2s;
+        }
+
+        .quiz-option:hover,
+        .communication-option:hover {
+            transform: translateY(-2px);
+        }
+
+        .quiz-option.correct,
+        .communication-option.correct {
+            border-color: green;
+            background: #e9f9e9;
+        }
+
+        .quiz-option.wrong,
+        .communication-option.wrong {
+            border-color: red;
+            background: #ffecec;
+        }
+
+        .quiz-feedback {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .quiz-next {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .quiz-result {
+            display: none;
+            text-align: center;
+        }
+
+        .score-number {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        .quiz-restart {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           GOAL SETTING
+        ========================= */
+
+        .goal-box {
+            display: none;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 35px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.09);
+        }
+
+        .goal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .goal-icon {
+            font-size: 60px;
+            margin-bottom: 8px;
+        }
+
+        .goal-header h2 {
+            font-size: 30px;
+            margin: 5px 0 10px;
+        }
+
+        .goal-header p {
+            line-height: 1.7;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .goal-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .goal-field {
+            display: grid;
+            gap: 8px;
+        }
+
+        .goal-field label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .goal-field input,
+        .goal-field select,
+        .goal-field textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .goal-field input:focus,
+        .goal-field select:focus,
+        .goal-field textarea:focus {
+            outline: none;
+            border-color: #4caf50;
+            box-shadow: 0 0 0 3px rgba(76,175,80,0.10);
+        }
+
+        .goal-field textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .goal-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        .goal-create-btn,
+        .goal-reset-btn {
+            padding: 14px 22px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .goal-create-btn {
+            flex: 1;
+        }
+
+        .goal-create-btn:hover,
+        .goal-reset-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .goal-reset-btn {
+            background: #eee;
+        }
+
+
+        /* =========================
+           GOAL RESULT
+        ========================= */
+
+        .goal-result {
+            display: none;
+            margin-top: 35px;
+            padding: 28px;
+            border-radius: 20px;
+            background: #f5fff5;
+            border: 2px solid #d9f0d9;
+        }
+
+        .goal-result h3 {
+            margin-top: 0;
+            font-size: 26px;
+        }
+
+        .goal-result > p {
+            line-height: 1.6;
+        }
+
+        .goal-card {
+            margin-top: 22px;
+            padding: 25px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+        }
+
+        .goal-card-title {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .goal-detail {
+            margin: 13px 0;
+            line-height: 1.7;
+        }
+
+        .goal-detail strong {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .goal-motivation {
+            margin-top: 22px;
+            padding: 17px;
+            border-radius: 14px;
+            background: #fff8df;
+            line-height: 1.7;
+        }
+
+        .goal-progress {
+            margin-top: 22px;
+            padding: 18px;
+            border-radius: 14px;
+            background: #f4f7ff;
+        }
+
+        .goal-progress-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #e5e5e5;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 10%;
+            height: 100%;
+            background: #4caf50;
+            border-radius: 20px;
+        }
+
+        .progress-text {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .goal-result-buttons {
+            margin-top: 22px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .quiz-box,
+            .goal-box {
+                margin: 25px 15px;
+                padding: 22px;
+            }
+
+            .quiz-question {
+                font-size: 19px;
+            }
+
+            .goal-header h2 {
+                font-size: 25px;
+            }
+
+            .goal-actions {
+                flex-direction: column;
+            }
+
+            .goal-create-btn,
+            .goal-reset-btn {
+                width: 100%;
+            }
+
+            .goal-card-title {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        🌱 Learn & Grow
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="study.html">Study Skills</a>
+
+        <a href="communication.html">Communication</a>
+
+        <a href="leadership.html">Leadership</a>
+
+        <a href="growth.html">Personal Growth</a>
+
+        <a href="practice.html">Practice</a>
+
+        <a href="challenges.html">Challenges</a>
+
+        <a href="achievements.html">Achievements</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     PRACTICE HERO
+========================= -->
+
+<section class="study-hero">
+
+    <div>
+
+        <p class="small-title">
+            PRACTICE ZONE
+        </p>
+
+        <h1>
+            Practice what you learn.
+        </h1>
+
+        <p>
+            Learning becomes stronger when you practice.
+            Try these quick activities and test your skills.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRACTICE ACTIVITIES
+========================= -->
+
+<section class="study-section">
+
+    <div class="section-title">
+
+        <p class="small-title">
+            ACTIVITIES
+        </p>
+
+        <h2>
+            Choose an activity
+        </h2>
+
+        <p>
+            Challenge yourself and see what you know.
+        </p>
+
+    </div>
+
+
+
+    <div class="cards">
+
+
+        <!-- STUDY QUIZ -->
+
+        <div class="card">
+
+            <div class="icon">
+                
+            </div>
+
+            <h3>
+                Study Quiz
+            </h3>
+
+            <p>
+                Test your knowledge about effective
+                study habits and time management.
+            </p>
+
+            <button class="practice-btn"
+                    onclick="studyQuiz()">
+
+                Start Quiz →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- COMMUNICATION -->
+
+        <div class="card">
+
+            <div class="icon">
+                
+            </div>
+
+            <h3>
+                Communication Practice
+            </h3>
+
+            <p>
+                Practice listening, respectful speaking
+                and handling everyday communication situations.
+            </p>
+
+            <button class="practice-btn"
+                    onclick="communicationPractice()">
+
+                Practice →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- GOAL SETTING -->
+
+        <div class="card">
+
+            <div class="icon">
+                
+            </div>
+
+            <h3>
+                Goal Setting
+            </h3>
+
+            <p>
+                Create a clear goal, choose a deadline
+                and plan your first step.
+            </p>
+
+            <button class="practice-btn"
+                    onclick="goalPractice()">
+
+                Set a Goal →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- LEADERSHIP -->
+
+        <div class="card">
+
+            <div class="icon">
+                
+            </div>
+
+            <h3>
+                Leadership Challenge
+            </h3>
+
+            <p>
+                Think like a leader and decide how
+                you would solve a team problem.
+            </p>
+
+            <button class="practice-btn"
+                    onclick="leadershipPractice()">
+
+                start pracrice →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     STUDY QUIZ PANEL
+========================= -->
+
+<section id="quizBox"
+         class="quiz-box">
+
+    <div id="quizContent">
+
+        <div class="quiz-progress"
+             id="quizProgress">
+        </div>
+
+        <div class="quiz-question"
+             id="quizQuestion">
+        </div>
+
+        <div class="quiz-options"
+             id="quizOptions">
+        </div>
+
+        <div class="quiz-feedback"
+             id="quizFeedback">
+        </div>
+
+        <button class="practice-btn quiz-next"
+                id="quizNext"
+                onclick="nextQuestion()">
+
+            Next Question →
+
+        </button>
+
+    </div>
+
+
+    <div id="quizResult"
+         class="quiz-result">
+
+        <div class="icon">
+            
+        </div>
+
+        <h2>
+            Quiz Complete!
+        </h2>
+
+        <div class="score-number"
+             id="finalScore">
+        </div>
+
+        <p id="resultMessage"></p>
+
+        <button class="practice-btn quiz-restart"
+                onclick="restartQuiz()">
+
+             Try Again
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     COMMUNICATION PRACTICE
+========================= -->
+
+<section id="communicationPracticeBox"
+         class="quiz-box">
+
+    <div class="quiz-progress"
+         id="communicationScenario">
+
+        Scenario 1 of 5
+
+    </div>
+
+    <div class="quiz-question"
+         id="communicationQuestion">
+    </div>
+
+    <div class="quiz-options"
+         id="communicationOptions">
+
+        <button class="communication-option"
+                onclick="chooseCommunication(0)">
+            A.
+        </button>
+
+        <button class="communication-option"
+                onclick="chooseCommunication(1)">
+            B.
+        </button>
+
+        <button class="communication-option"
+                onclick="chooseCommunication(2)">
+            C.
+        </button>
+
+        <button class="communication-option"
+                onclick="chooseCommunication(3)">
+            D.
+        </button>
+
+    </div>
+
+    <div class="quiz-feedback"
+         id="communicationFeedback">
+    </div>
+
+    <button class="practice-btn quiz-next"
+            id="communicationNext"
+            onclick="nextCommunication()">
+
+        Next Scenario →
+
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+     GOAL SETTING PANEL
+========================= -->
+
+<section id="goalBox"
+         class="goal-box">
+
+
+    <div class="goal-header">
+
+        <div class="goal-icon">
+            
+        </div>
+
+        <h2>
+            Build Your Goal
+        </h2>
+
+        <p>
+            A clear goal gives you direction.
+            Let's turn your idea into a simple plan.
+        </p>
+
+    </div>
+
+
+
+    <div class="goal-form">
+
+
+        <!-- GOAL -->
+
+        <div class="goal-field">
+
+            <label for="goalTitle">
+                 What is your goal?
+            </label>
+
+            <input
+                type="text"
+                id="goalTitle"
+                placeholder="Example: Improve my English speaking"
+            >
+
+        </div>
+
+
+
+        <!-- CATEGORY -->
+
+        <div class="goal-field">
+
+            <label for="goalCategory">
+                 Choose a category
+            </label>
+
+            <select id="goalCategory">
+
+                <option value="">
+                    Select a category
+                </option>
+
+                <option value=" Study">
+                     Study
+                </option>
+
+                <option value=" Career">
+                     Career
+                </option>
+
+                <option value=" Technology">
+                     Technology
+                </option>
+
+                <option value="🌱 Personal Growth">
+                    🌱 Personal Growth
+                </option>
+
+                <option value=" Health & Fitness">
+                     Health & Fitness
+                </option>
+
+                <option value=" Other">
+                     Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- DEADLINE -->
+
+        <div class="goal-field">
+
+            <label for="goalDeadline">
+                 When do you want to achieve it?
+            </label>
+
+            <input
+                type="date"
+                id="goalDeadline"
+            >
+
+        </div>
+
+
+
+        <!-- WHY -->
+
+        <div class="goal-field">
+
+            <label for="goalWhy">
+                 Why is this goal important to you?
+            </label>
+
+            <textarea
+                id="goalWhy"
+                placeholder="Write why this goal matters to you..."
+            ></textarea>
+
+        </div>
+
+
+
+        <!-- FIRST STEP -->
+
+        <div class="goal-field">
+
+            <label for="goalStep">
+                 What is one small step you can take today?
+            </label>
+
+            <textarea
+                id="goalStep"
+                placeholder="Example: Practice speaking English for 15 minutes"
+            ></textarea>
+
+        </div>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="goal-actions">
+
+            <button
+                class="practice-btn goal-create-btn"
+                onclick="createGoal()">
+
+                 Create My Goal
+
+            </button>
+
+            <button
+                class="goal-reset-btn"
+                onclick="resetGoal()">
+
+                 Reset
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         GOAL RESULT
+    ========================= -->
+
+    <div id="goalResult"
+         class="goal-result">
+
+        <h3>
+             Your Goal Plan
+        </h3>
+
+        <p>
+            Great job! You have turned your idea
+            into a clear goal and action plan.
+        </p>
+
+
+        <div class="goal-card">
+
+
+            <div class="goal-card-title"
+                 id="goalCardTitle">
+            </div>
+
+
+            <div class="goal-detail">
+
+                <strong>
+                     Category:
+                </strong>
+
+                <span id="goalCardCategory"></span>
+
+            </div>
+
+
+            <div class="goal-detail">
+
+                <strong>
+                     Deadline:
+                </strong>
+
+                <span id="goalCardDeadline"></span>
+
+            </div>
+
+
+            <div class="goal-detail">
+
+                <strong>
+                     Why:
+                </strong>
+
+                <span id="goalCardWhy"></span>
+
+            </div>
+
+
+            <div class="goal-detail">
+
+                <strong>
+                     First Step:
+                </strong>
+
+                <span id="goalCardStep"></span>
+
+            </div>
+
+
+
+            <!-- PROGRESS -->
+
+            <div class="goal-progress">
+
+                <div class="goal-progress-title">
+                     Goal Progress
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+                <div class="progress-text">
+                    10% — You have started! 🎉
+                </div>
+
+            </div>
+
+
+
+            <!-- MOTIVATION -->
+
+            <div class="goal-motivation">
+
+                🌱 <strong>Remember:</strong>
+
+                You don't have to achieve everything
+                in one day. Small steps every day
+                can create big results.
+
+            </div>
+
+        </div>
+
+
+
+        <div class="goal-result-buttons">
+
+            <button
+                class="practice-btn"
+                onclick="resetGoal()">
+
+                 Create Another Goal
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MOTIVATION
+========================= -->
+
+<section class="purpose">
+
+    <div class="purpose-text">
+
+        <p class="small-title">
+            KEEP PRACTICING
+        </p>
+
+        <h2>
+            Practice turns knowledge into skill.
+        </h2>
+
+        <p>
+            Don't worry about making mistakes.
+            Every attempt is a chance to learn,
+            improve and grow.
+        </p>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat-box">
+
+            <strong>
+                4
+            </strong>
+
+            <p>
+                Learn
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <strong>
+                8
+            </strong>
+
+            <p>
+                Practice
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <strong>
+                6
+            </strong>
+
+            <p>
+                Grow
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        🌱 Learn & Grow — Learn today, grow every day.
+    </p>
+
+    <p>
+        Student Web Project
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Challenges | Learn & Grow</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* CHALLENGE PANEL */
+
+        .challenge-panel {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .challenge-panel.active {
+            display: block;
+        }
+
+        .challenge-panel h2 {
+            margin-bottom: 10px;
+        }
+
+        .challenge-panel > p {
+            margin-bottom: 25px;
+        }
+
+        .challenge-task {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 18px;
+            margin-bottom: 12px;
+            border-radius: 14px;
+            background: #f7f8f5;
+        }
+
+        .challenge-task input {
+            width: 20px;
+            height: 20px;
+            margin-top: 3px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .challenge-task span {
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        .challenge-actions {
+            margin-top: 25px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .challenge-message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .close-challenge {
+            margin-left: 10px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        🌱 Learn & Grow
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="study.html">Study Skills</a>
+
+        <a href="communication.html">Communication</a>
+
+        <a href="leadership.html">Leadership</a>
+
+        <a href="growth.html">Personal Growth</a>
+
+        <a href="practice.html">Practice</a>
+
+        <a href="challenges.html">Challenges</a>
+
+        <a href="achievements.html">Achievements</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- CHALLENGES HERO -->
+
+<section class="study-hero">
+
+    <div>
+
+        <p class="small-title">
+            SKILL CHALLENGES
+        </p>
+
+        <h1>
+            Challenge yourself to grow. 
+        </h1>
+
+        <p>
+            Put your skills into action with practical challenges.
+            Complete the tasks, build good habits and celebrate
+            your progress.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- CHALLENGES -->
+
+<section class="study-section">
+
+    <div class="section-title">
+
+        <p class="small-title">
+            YOUR CHALLENGES
+        </p>
+
+        <h2>
+            Choose a challenge
+        </h2>
+
+        <p>
+            Start a challenge and complete the tasks step by step.
+        </p>
+
+    </div>
+
+
+
+    <div class="cards">
+
+
+        <!-- STUDY CHALLENGE -->
+
+        <div class="card">
+
+            <div class="icon">
+                
+            </div>
+
+            <h3>
+                7-Day Study Challenge
+            </h3>
+
+            <p>
+                Study for at least 25 focused minutes every day
+                for seven days.
+            </p>
+
+            <button
+                type="button"
+                class="practice-btn"
+                onclick="startChallenge('7-Day Study Challenge')">
+
+                Start Challenge →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- COMMUNICATION CHALLENGE -->
+
+        <div class="card">
+
+            <div class="icon">
+                
+            </div>
+
+            <h3>
+                Communication Challenge
+            </h3>
+
+            <p>
+                Complete three simple activities to improve
+                your communication and listening skills.
+            </p>
+
+            <button
+                type="button"
+                class="practice-btn"
+                onclick="startChallenge('Communication Challenge')">
+
+                Start Challenge →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- LEADERSHIP CHALLENGE -->
+
+        <div class="card">
+
+            <div class="icon">
+                
+            </div>
+
+            <h3>
+                Leadership Challenge
+            </h3>
+
+            <p>
+                Practice responsibility, teamwork and leadership
+                through three real-life tasks.
+            </p>
+
+            <button
+                type="button"
+                class="practice-btn"
+                onclick="startChallenge('Leadership Challenge')">
+
+                Start Challenge →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- PERSONAL GROWTH CHALLENGE -->
+
+        <div class="card">
+
+            <div class="icon">
+                
+            </div>
+
+            <h3>
+                Personal Growth Challenge
+            </h3>
+
+            <p>
+                Build a positive habit and practice it every day
+                for one week.
+            </p>
+
+            <button
+                type="button"
+                class="practice-btn"
+                onclick="startChallenge('Personal Growth Challenge')">
+
+                Start Challenge →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CHALLENGE PANEL -->
+
+    <div
+        id="challengePanel"
+        class="challenge-panel">
+
+        <h2 id="challengeTitle">
+            Challenge
+        </h2>
+
+        <p id="challengeDescription">
+            Complete all the tasks below.
+        </p>
+
+        <div id="challengeTasks"></div>
+
+        <div class="challenge-actions">
+
+            <button
+                type="button"
+                class="practice-btn"
+                onclick="finishCurrentChallenge()">
+
+                Finish Challenge 
+
+            </button>
+
+            <button
+                type="button"
+                class="close-challenge"
+                onclick="closeChallenge()">
+
+                Close
+
+            </button>
+
+        </div>
+
+        <p
+            id="challengeMessage"
+            class="challenge-message">
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- MOTIVATION -->
+
+<section class="purpose">
+
+    <div class="purpose-text">
+
+        <p class="small-title">
+            KEEP GOING
+        </p>
+
+        <h2>
+            Every challenge is a step forward. 
+        </h2>
+
+        <p>
+            You don't have to be perfect. Start small,
+            stay consistent and celebrate every improvement.
+        </p>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat-box">
+
+            <strong>
+                4
+            </strong>
+
+            <p>
+                Challenges
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <strong>
+                8
+            </strong>
+
+            <p>
+                Progress
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <strong>
+              12  
+            </strong>
+
+            <p>
+                Achievements
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        🌱 Learn & Grow — Learn today, grow every day.
+    </p>
+
+    <p>
+        Student Web Project
+    </p>
+
+</footer>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
